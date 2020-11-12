@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Hello, world!</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.css">
+
+    <style>
+        a.btn{
+            background: var(--main-color);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="media my-2">
+            <!-- <img src="..." class="mr-3" alt="..."> -->
+            <i class="fas fa-ticket-alt fa-2x mr-2" style="color: var(--main-color)"></i>
+            <div class="media-body">
+                <!-- <a class="btn btn-danger btn-sm" style="float: right;">Check Out</a> -->
+                Full Day Pass<br>
+                Seat No : A01<br>
+                Order Date : 10 November 2020 07:30<br>
+                Start : 11 November 2020 13:00<br>
+                End : 11 November 2020 18:00<br>
+            </div>
+        </div>
+
+        <div class="media my-2">
+            <!-- <img src="..." class="mr-3" alt="..."> -->
+            <i class="fas fa-ticket-alt fa-2x mr-2" style="color: var(--main-color)"></i>
+            <div class="media-body">
+                <!-- <a class="btn btn-danger btn-sm" style="float: right;">Check Out</a> -->
+                Full Day Pass<br>
+                Seat No : A01<br>
+                Order Date : 10 November 2020 07:30<br>
+                Start : 11 November 2020 13:00<br>
+                End : 11 November 2020 18:00<br>
+            </div>
+        </div>
+
+        <div class="media my-2">
+            <!-- <img src="..." class="mr-3" alt="..."> -->
+            <i class="fas fa-ticket-alt fa-2x mr-2" style="color: var(--main-color)"></i>
+            <div class="media-body">
+                <!-- <a class="btn btn-danger btn-sm" style="float: right;">Check Out</a> -->
+                Full Day Pass<br>
+                Seat No : A01<br>
+                Order Date : 10 November 2020 07:30<br>
+                Start : 11 November 2020 13:00<br>
+                End : 11 November 2020 18:00<br>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar-mobile">
+        <ul>
+            <li><a href="">
+                    <i class="fas fa-home"></i>
+                    <div>Home</div>
+                </a>
+            </li>
+            <li><a href="">
+                    <i class="fas fa-shopping-cart"></i>
+                    <div>My Order</div>
+                </a>
+            </li>
+            <li><a href="">
+                    <i class="fas fa-user"></i>
+                    <div>Profile</div>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+        integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous"></script>
+
+    <script>
+        var globals = {}; // application wide global variable
+
+        globals.constants = {
+        }
+
+        /*globals.showToastMessage = function(heading, message, icon) {
+            $.toast({
+                heading: heading,
+                text: message,
+                showHideTransition: 'slide',
+                icon: icon  // info, error, warning, success
+            });
+        };*/
+
+        globals.makeGraphQLRequest = function(url, params, successCallback) {
+            var self = this;
+            $.ajax({
+                url: 'http://api.startspace.rapiertechnology.co.id/',
+                method: 'post',
+                data: params,
+                dataType: 'json',
+                success: function(response) {
+                    if (response.data) {
+                        successCallback(response.data);
+                    } else {
+                        self.showToastMessage('Error', 'Server side error', 'error');
+                    }
+                },
+                error: globals.ajaxErrorHandler
+            });
+        }
+
+
+        $(document).ready(function() {
+           
+            // $('.ui.checkbox').checkbox();
+            // var params = {}; // parameters
+
+           /* $('#updateProfileButton').on('click', function() {
+                params.name = $('#myProfile input[name="name"]').val();
+                params.mobile = $('#myProfile input[name="mobile"]').val();
+                params.dob = $('#myProfile input[name="dob"]').val();
+                params.gender = $('#myProfile input[name="gender"]:checked').val();
+
+                $('#updateProfileButton').addClass('loading');
+
+                globals.makeGraphQLRequest('graphql', {
+                    query: `mutation($params: JSON!) {
+                        updateProfile(params: $params) {
+                            id mobile name email dob gender error
+                        }
+                    }`,
+                    variables: {
+                        params: params
+                    }
+                }, function successCallback(data) {
+                    var user = data.updateProfile;
+                    if (user.error) {
+                        globals.showToastMessage('Error', user.error, 'error');
+                    } else {
+                        globals.showToastMessage('Success', 'Profile Updated', 'success');
+                    }
+                    $('#updateProfileButton').removeClass('loading');
+                });
+            });*/
+
+
+            globals.makeGraphQLRequest('graphql', {
+                query: `query {
+                             my_history(
+                                      user_id:63
+                                      offset : 0,
+                                      limit: 51
+                               ) {
+                                    id
+                                    type
+                                    title
+                                    description
+                                    price
+                                    existing_coin
+                                    person
+                                    additional_person
+                                    status
+                                    created_at
+                                    booking_start
+                                    booking_end
+                                 }
+                            
+                        }`
+            }, function successCallback(data) {
+
+                alert(JSON.stringify(data));
+                /*var user = data.profile;
+                if (user.error) {
+                    globals.showToastMessage('Error', user.error, 'error');
+                } else {
+                    // populate my profile
+                    $('#myProfile input[name="mobile"]').val(user.mobile);
+                    $('#myProfile input[name="name"]').val(user.name);
+                    $('#myProfile input[name="email"]').val(user.email);
+                    $('#myProfile input[name="dob"]').val(globals.formatDate(user.dob));
+
+                    $('#myProfile input[name="gender"]').removeAttr('checked');
+                    $('#myProfile input[name="gender"][value="' + user.gender + '"]')
+                            .attr('checked', 'checked').click();
+                    }*/
+            });
+
+        });
+        var data = JSON.stringify({
+            query: 'query {\n     gettime{\n              time_now\n           }\n     }',
+            variables: {}
+        });
+        $(document).ready(function () {
+            $.ajax({
+                url: 'http://api.startspace.rapiertechnology.co.id/',
+                data: data,
+                dataType: 'json',
+                headers: {
+                    Authorization: 'Basic ' + btoa('mobapp' + ':' + '!RapeierDev@2020')
+                },
+                type: 'POST',
+                success: function (res) {
+                    alert(res)
+                }
+            })
+        })
+    </script>
+
+</body>
+
+</html>
