@@ -1,12 +1,70 @@
-<main>
-    <div class="container">
-        <h1>HOME</h1>
-        <button class="btn btn-primary" id="book">BOOK</button>
+<style>
+    .btn-circle {
+        width: 20vw;
+        height: 20vw;
+        text-align: center;
+        border: solid 1px grey;
+        border-radius: 50%;
+        font-size: x-large;
+    }
+</style>
+    <div class="container pt-3">
+        <div class="row">
+            <div class="col-6">
+                <img class="img img-responsive" src="./assets/images/dbs_logo.png" style="width: 65%;">
+            </div>
+            <div class="col-6">
+                <button class="btn btn-danger float-right" id="logout">Logout</button>
+            </div>
+        </div>
+        <div id="profile-view-login" class="card mt-4" style="width: 100%;">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-4 d-flex align-items-center">   
+                        <div class="text-center w-100"><i class="fas fa-user" style="font-size: xx-large;"></i></div>
+                    </div>
+                    <div class="col-8">
+                        <p>Hello <span id="username">Andrei</span>!</p>                       
+                        <p>Your location <strong id="location">Tangerang</strong></p>   
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="profile-view-logout" class="card mt-4" style="width: 100%; display: none;">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-4 d-flex align-items-center">   
+                        <div class="text-center w-100"><i class="fas fa-user" style="font-size: xx-large;"></i></div>
+                    </div>
+                    <div class="col-8">
+                        <p>Please login for best surfing in this app!</p>             
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container mt-4">
+            <div class="row">
+                <div class="col-4 text-center">                
+                    <button class="btn btn-circle btn-lg" id="booking"><i class="fab fa-buromobelexperte"></i></button>
+                    <br>booking
+                </div>
+                <div class="col-4 text-center">
+                    <button class="btn btn-circle btn-lg" id="check_status"><i class="far fa-check-square"></i></button><br>check status
+                </div>
+                <div class="col-4 text-center">
+                    <button class="btn btn-circle btn-lg" id="check_in_out"><i class="fas fa-arrows-alt-h"></i></button><br>in/out
+                </div>
+            </div>
+        </div>
     </div>
-</main>
 <script>
-    $("#book").click(function(){
+    $("#booking").click(function(){
         toggleNavigation();        
         $("#content").load("./pages/book.html");
     });
+    $("#logout").click(function(){
+        localStorage.clear();
+        window.location.href = "http://localhost/dbs_webview/login.html";
+    });
+
 </script>
