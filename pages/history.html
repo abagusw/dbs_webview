@@ -182,7 +182,21 @@
                         }`
             }, function successCallback(data) {
 
-                alert(JSON.stringify(data));
+                console.log(data.my_history[0]);
+                    html="";
+                data.my_history.forEach(async function(rating) {
+                html += '<div class="media my-2">';
+                html += '<i class="fas fa-ticket-alt fa-2x mr-2" style="color: var(--main-color)"></i>';
+                html += '<div class="media-body">';
+                html += rating.title+'<br>';
+                html += 'Seat No : A01<br>';
+                html += 'Order Date :'+rating.created_at+'<br>';
+                html += 'Start : '+rating.booking_start+'<br>';
+                html += 'End : '+rating.booking_end+'<br>';
+                html += '</div>';
+                html += '</div>';
+                });
+                $(".container").html(html);
                 /*var user = data.profile;
                 if (user.error) {
                     globals.showToastMessage('Error', user.error, 'error');
