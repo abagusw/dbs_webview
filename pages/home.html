@@ -1,0 +1,12 @@
+<main>
+    <div class="container">
+        <h1>HOME</h1>
+        <button class="btn btn-primary" id="book">BOOK</button>
+    </div>
+</main>
+<script>
+    $("#book").click(function(){
+        toggleNavigation();        
+        $("#content").load("./pages/book.html");
+    });
+</script>
