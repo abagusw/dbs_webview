@@ -1,6 +1,6 @@
 :root {
     --main-color: red;
-    --second-color: blue;
+    --second-color: #69c1e9;
     --gray-color: #555;
 }
 
@@ -9,6 +9,21 @@ body {
     color: var(--gray-color);
 }
 
+.btn {
+    border: none;
+}
+
+.btn-sticky {
+    position: sticky;
+    bottom: 0;
+}
+
+.btn-secondary {
+    background-color: var(--second-color);
+}
+
+
+/* header */
 header {
     position: fixed;
     top: 0;
@@ -31,10 +46,14 @@ header .title {
 }
 
 main {
+    position: relative;
     margin-top: 60px;
     padding: 1.5rem;
 }
 
+
+
+/* navigation menu */
 .navbar-mobile {
     position: fixed;
     display: flex;
@@ -71,4 +90,65 @@ main {
 .navbar-mobile i {
     margin-bottom: .3rem;
     font-size: 1.1rem;
+}
+
+
+
+.month {
+    color: #ff6f6f;
+}
+
+/* table booking*/
+table {
+    width: 100%;
+    font-size: .8rem;
+}
+
+th {
+    background-color: #eee;
+    color: var(--gray-color);
+}
+
+th,
+td {
+    text-align: center;
+    border: 1px solid #ddd;
+    padding: .5rem;
+}
+
+th.active,
+td.active {
+    background-color: var(--second-color);
+    font-weight: bold;
+}
+
+/* seat */
+.seat {
+    list-style-type: none;
+    padding-inline-start: 0;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 1.4rem;
+    width: 100%;
+}
+
+.seat li {
+    width: auto;
+    height: 2rem;
+}
+
+.seat li:nth-of-type(8) {
+    margin-bottom: 1.6rem;
+}
+
+.available {
+    background-color: #44cc44;
+}
+
+.booked {
+    background-color: #e3e64b;
+}
+
+.confirmed {
+    background-color: #cc4444;
 }
