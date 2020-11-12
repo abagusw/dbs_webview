@@ -58,13 +58,23 @@
         </div>
     </div>
 <script>
+	var name= localStorage.getItem("name");
+	$('#username').html(capitalize(name));
     $("#booking").click(function(){
         toggleNavigation();        
         $("#content").load("./pages/book.html");
     });
     $("#logout").click(function(){
         localStorage.clear();
-        window.location.href = "./login.html";
+        window.location.href = "http://192.168.1.6/dbs_webview/login.html";
     });
+    function capitalize(str) {
+	  strVal = '';
+	  str = str.split(' ');
+	  for (var chr = 0; chr < str.length; chr++) {
+	    strVal += str[chr].substring(0, 1).toUpperCase() + str[chr].substring(1, str[chr].length) + ' '
+	  }
+	  return strVal
+	}
 
 </script>
