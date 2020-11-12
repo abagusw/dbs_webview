@@ -22,9 +22,8 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="media my-2">
-            <!-- <img src="..." class="mr-3" alt="..."> -->
+    <div class="container" id="cardList">
+        <!-- <div class="media my-2">
             <i class="fas fa-ticket-alt fa-2x mr-2" style="color: var(--main-color)"></i>
             <div class="media-body">
                 <a class="btn btn-danger btn-sm" style="float: right;">Check Out</a>
@@ -34,33 +33,8 @@
                 Start : 11 November 2020 13:00<br>
                 End : 11 November 2020 18:00<br>
             </div>
-        </div>
+        </div> -->
 
-        <div class="media my-2">
-            <!-- <img src="..." class="mr-3" alt="..."> -->
-            <i class="fas fa-ticket-alt fa-2x mr-2" style="color: var(--main-color)"></i>
-            <div class="media-body">
-                <a class="btn btn-danger btn-sm" style="float: right;">Check Out</a>
-                Full Day Pass<br>
-                Seat No : A01<br>
-                Order Date : 10 November 2020 07:30<br>
-                Start : 11 November 2020 13:00<br>
-                End : 11 November 2020 18:00<br>
-            </div>
-        </div>
-
-        <div class="media my-2">
-            <!-- <img src="..." class="mr-3" alt="..."> -->
-            <i class="fas fa-ticket-alt fa-2x mr-2" style="color: var(--main-color)"></i>
-            <div class="media-body">
-                <a class="btn btn-danger btn-sm" style="float: right;">Check Out</a>
-                Full Day Pass<br>
-                Seat No : A01<br>
-                Order Date : 10 November 2020 07:30<br>
-                Start : 11 November 2020 13:00<br>
-                End : 11 November 2020 18:00<br>
-            </div>
-        </div>
     </div>
 
     <nav class="navbar-mobile">
@@ -149,7 +123,20 @@
                 } else {
                     // loop create order
                     $.each(orders, function(index, order){
-                        console.log(order.booking_end)
+                        // console.log(order.booking_end)
+                        var item = '<div class="media my-2">'
+                                    + '<i class="fas fa-ticket-alt fa-2x mr-2" style="color: var(--main-color)"></i>'
+                                    + '<div class="media-body">'
+                                    + '<a href="chekout.html?id=' + order.id + '" class="btn btn-danger btn-sm" style="float: right;">Check Out</a>'
+                                    + 'Full Day Pass<br>'
+                                    + 'Seat No : ' + order.id + '<br>'
+                                    + 'Order Date : ' + order.created_at + '<br>'
+                                    + 'Start : ' + order.booking_start + '<br>'
+                                    + 'End : ' + order.booking_end + '<br>'
+                                + '</div>'
+                            + '</div>'
+
+                        $('#cardList').append(item)
                     })
                 }
             })
