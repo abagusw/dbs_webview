@@ -44,8 +44,22 @@
         integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
         crossorigin="anonymous"></script>
 
-        <script src="js/navigation.js"></script>
-
+    <script src="js/navigation.js"></script>
+    <script>
+    // Check browser support
+    if (typeof(Storage) !== "undefined") {
+      // Store
+     
+      if (localStorage.getItem("id")==null) {
+         window.location.href = "http://localhost/dbs_webview/login.html";
+      }
+      // localStorage.setItem("lastname", "Smith");
+      // // Retrieve
+      // document.getElementById("result").innerHTML = localStorage.getItem("lastname");
+    } else {
+      document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
+    }
+    </script>
 </body>
 
 </html>
