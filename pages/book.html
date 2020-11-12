@@ -1,21 +1,96 @@
-    <header>
-        <a href="/">
-            <i class="fas fa-arrow-left"></i>
-        </a>
-        <div class="title">Book a Space</div>
-    </header>
+<header>
+    <a href="/">
+        <i class="fas fa-arrow-left"></i>
+    </a>
+    <div class="title">Book a Space</div>
+</header>
 
-    <main>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, sapiente! Unde nam voluptatem vitae
-            distinctio nemo, consequuntur fugit cum iusto, officiis tenetur numquam consectetur commodi velit laudantium
-            iure quo rem quaerat veritatis repellat, quis a corporis eius fugiat? In laborum sapiente nam dolorum optio
-            expedita non accusantium culpa pariatur minus impedit velit repellat cupiditate facilis, veritatis quas
-            laboriosam laudantium, earum reprehenderit dolor aperiam itaque quisquam quis exercitationem! Deleniti est
-            quis odit veniam quibusdam placeat doloribus facilis provident, eum ab. Sunt enim quas dolor assumenda,
-            dolorem optio! Amet ab commodi illum officiis, voluptatum doloremque earum eaque voluptatem consequatur vel,
-            ducimus expedita.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, ratione suscipit. Ipsam suscipit, facilis
-            aliquam autem repudiandae similique praesentium mollitia minus veniam voluptatum modi ad delectus? Corrupti,
-            id! Voluptas omnis ducimus id! Itaque asperiores at maxime vel, ipsam neque labore quibusdam amet sed sunt
-            ducimus, alias atque? Hic, delectus nam?</p>
-    </main>
+<main>
+    <!-- date -->
+    <div class="row no-gutters mb-5">
+        <div class="col">
+            <div class="row no-gutters justify-content-between mb-3">
+                <h5>
+                    <strong>Date</strong>
+                </h5>
+                <strong class="month">Nopember</strong>
+            </div>
+            <div class="row no-gutters">
+                <table>
+                    <tbody>
+                        <tr>
+                            <th>23</th>
+                            <th class="active">24</th>
+                            <th>25</th>
+                            <th>26</th>
+                        </tr>
+                        <tr>
+                            <td>Tue</td>
+                            <td class="active">Wed</td>
+                            <td>Fri</td>
+                            <td>Sat</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- seat -->
+    <div>
+        <h5 class="mb-4"><strong>Select Available Seats</strong></h5>
+        <ul class="seat">
+            <li class="available"></li>
+            <li class="available"></li>
+            <li class="available"></li>
+            <li class="available"></li>
+            <li class="available"></li>
+            <li class="available"></li>
+            <li class="available"></li>
+            <li class="available"></li>
+            <li class="booked"></li>
+            <li class="booked"></li>
+            <li class="available"></li>
+            <li class="available"></li>
+            <li class="available"></li>
+            <li class="available"></li>
+            <li class="available"></li>
+            <li class="available"></li>
+            <li class="available"></li>
+            <li class="available"></li>
+            <li class="available"></li>
+            <li class="available"></li>
+            <li class="available"></li>
+            <li class="available"></li>
+            <li class="confirmed"></li>
+            <li class="confirmed"></li>
+            <li class="available"></li>
+            <li class="available"></li>
+            <li class="available"></li>
+            <li class="available"></li>
+        </ul>
+
+        <div class="mt-5">
+            <label>Notes :</label>
+            <div class="row no-gutters mb-3">
+                <div class="col-1 mr-3 available" heigth="37"></div>
+                <div class="col-auto">Available</div>
+            </div>
+            <div class="row no-gutters mb-3">
+                <div class="col-1 mr-3 booked" heigth="37"></div>
+                <div class="col-auto">Booked</div>
+            </div>
+            <div class="row no-gutters">
+                <div class="col-1 mr-3 confirmed" heigth="37"></div>
+                <div class="col-auto">Confirmed</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- book -->
+    <div class="row no-gutters mt-5">
+        <div class="col text-center">
+            <button class="btn btn-secondary">Book a Space</button>
+        </div>
+    </div>
+</main>
